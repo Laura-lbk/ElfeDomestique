@@ -6,4 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".Menu">
 
+    <TextView
+        android:id="@+id/txt_cd"
+        android:layout_width="409dp"
+        android:layout_height="33dp"
+        android:fontFamily="@font/ralewayregular"
+        android:text="Conditions d'Utilisation"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_sms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="441dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginBottom="209dp"
+        android:text="SMS"
+        app:layout_constraintBottom_toTopOf="@+id/txt_cd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
