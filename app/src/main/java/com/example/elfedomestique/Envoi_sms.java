@@ -5,6 +5,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -33,12 +34,15 @@ public class Envoi_sms extends AppCompatActivity {
         txtphoneNo = (EditText) findViewById(R.id.saisie_num);
         txtMessage = (EditText) findViewById(R.id.saisie_txt);
 
+
+
         sendBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 sendSMSMessage();
             }
         });
     }
+
 
     protected void sendSMSMessage() {
         phoneNo = txtphoneNo.getText().toString();
@@ -68,8 +72,11 @@ public class Envoi_sms extends AppCompatActivity {
                             && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                         SmsManager smsManager = SmsManager.getDefault();
                         smsManager.sendTextMessage(phoneNo, null, message, null, null);
+                        txtphoneNo.setText("");
+                        txtMessage.setText("");
                         Toast.makeText(getApplicationContext(), "SMS sent.",
                                 Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(Envoi_sms.this, Menu.class));
                     } else {
                         Toast.makeText(getApplicationContext(),
                                 "SMS faild, please try again.", Toast.LENGTH_LONG).show();

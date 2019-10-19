@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Acceuil"
-    android:background="@drawable/plage1">
+    android:background="@drawable/soundwave">
 
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_marginRight="32dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/ralewayextrabold"
-        android:text="Elfe Doméstique"
+        android:text="Voice Sender"
         android:textAlignment="center"
         android:textColor="#E1FFFFFF"
         android:textSize="40sp"
@@ -36,7 +36,7 @@
         android:layout_marginBottom="40dp"
         android:fontFamily="@font/ralewayregular"
         android:text="Cliquez pour continuer"
-        android:textColor="#000000"
+        android:textColor="#FFFBFB"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,8 +44,8 @@
 
     <Button
         android:id="@+id/btn_acceuil"
-        android:layout_width="369dp"
-        android:layout_height="725dp"
+        android:layout_width="422dp"
+        android:layout_height="736dp"
         android:backgroundTintMode="screen"
         android:textColor="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
