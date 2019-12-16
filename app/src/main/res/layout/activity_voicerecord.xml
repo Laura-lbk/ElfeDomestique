@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
+    android:background="@drawable/soundwave2">
     tools:context=".VoiceRecord">
-
-
 
 
     <TextView
@@ -15,19 +14,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Appuyez sur le micro pour parler..."
-        android:textSize="20sp"
-        android:textColor="#000"/>
-    
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
     <ImageButton
         android:id="@+id/voiceBtn"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_centerInParent="true"
         android:background="@null"
-        android:src="@drawable/ic_mic"
         android:scaleType="fitCenter"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        />
-       
+        android:src="@drawable/ic_mic" />
+
 
 </RelativeLayout>

@@ -23,6 +23,7 @@ public class Envoi_sms extends AppCompatActivity {
     EditText txtMessage; // Message
     String phoneNo;
     String message;
+    Button retour;
 
 
     @Override
@@ -31,11 +32,19 @@ public class Envoi_sms extends AppCompatActivity {
         setContentView(R.layout.activity_envoi_sms);
 
         sendBtn = (Button) findViewById(R.id.btn_envoi);
+        retour = (Button) findViewById(R.id.btn_retour);
         txtphoneNo = (EditText) findViewById(R.id.saisie_num);
         txtMessage = (EditText) findViewById(R.id.saisie_txt);
 
+        txtMessage.setText(getIntent().getStringExtra("message"));
 
-
+        retour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Envoi_sms.this, VoiceRecord.class);
+                startActivity(intent);
+            }
+        });
         sendBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 sendSMSMessage();

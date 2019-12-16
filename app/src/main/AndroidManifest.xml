@@ -15,6 +15,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Envoi_sms"
             ></activity>
+        <activity android:name=".VoiceRecord" />
         <activity android:name=".Menu" />
         <activity android:name=".Acceuil">
             <intent-filter>

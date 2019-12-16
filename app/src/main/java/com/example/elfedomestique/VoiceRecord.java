@@ -14,7 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class stt extends AppCompatActivity {
+public class VoiceRecord extends AppCompatActivity {
 
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     TextView mTextTv;
@@ -23,7 +23,7 @@ public class stt extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.stt);
+        setContentView(R.layout.activity_voicerecord);
 
         mTextTv = findViewById(R.id.textTv);
         mVoiceBtn=findViewById(R.id.voiceBtn);
@@ -40,7 +40,7 @@ public class stt extends AppCompatActivity {
         Intent intent=new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"dit qqc wesh");
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Parlez");
 
         try{
             startActivityForResult(intent, REQUEST_CODE_SPEECH_INPUT);
@@ -60,6 +60,10 @@ public class stt extends AppCompatActivity {
                 if(resultCode==RESULT_OK && null!=data){
                     ArrayList<String> result=data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     mTextTv.setText(result.get(0));
+
+                    Intent intent = new Intent(VoiceRecord.this, Envoi_sms.class);
+                    intent.putExtra("message", mTextTv.getText().toString());
+                    startActivity(intent);
                 }
                 break;
             }
